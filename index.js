@@ -31,7 +31,7 @@ const test=JSON.stringify(markdown)
   console.log(`strigified ${test}`)
   console.log(`input ${markdown}`)
 
-    const fullHtml = test
+    const fullHtml = markdown
    
     try {
         // Launch puppeteer using chrome-aws-lambda
