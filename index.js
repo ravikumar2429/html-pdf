@@ -28,7 +28,8 @@ app.post('/generatePdf', async (req, res) => {
         return res.status(400).json({ error: 'Markdown content is required' });
     }
 const test=JSON.stringify(markdown)
-  console.log(`hello ${test}`)
+  console.log(`strigified ${test}`)
+  console.log(`input ${markdown}`)
 
     const fullHtml = test
    
