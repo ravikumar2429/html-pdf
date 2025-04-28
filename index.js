@@ -75,7 +75,7 @@ app.post('/generatePdf', async (req, res) => {
         await browser.close();
 
         // Upload to Supabase
-        const bucketName = 'avatars';
+        const bucketName = 'proctoringdata';
         const fileName = `output-${Date.now()}.pdf`;
 
         const { data, error } = await supabase.storage
