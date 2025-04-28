@@ -34,30 +34,30 @@ app.post('/generatePdf', async (req, res) => {
    
     try {
         // Launch puppeteer using chrome-aws-lambda
-        // const browser = await puppeteer.launch({
-        //     args: [
-        //         ...chromium.args,
-        //         '--font-render-hinting=medium',
-        //         '--disable-skia-runtime-opts',
-        //         '--disable-font-subpixel-positioning',
-        //     ],
-        //     defaultViewport: chromium.defaultViewport,
-        //     executablePath: await chromium.executablePath(),
-        //     headless: chromium.headless,
-        //     ignoreHTTPSErrors: true,
-        // });
         const browser = await puppeteer.launch({
-            headless: true,
-            landscape: true,
             args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
+                ...chromium.args,
                 '--font-render-hinting=medium',
                 '--disable-skia-runtime-opts',
                 '--disable-font-subpixel-positioning',
             ],
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath(),
+            headless: chromium.headless,
             ignoreHTTPSErrors: true,
         });
+        // const browser = await puppeteer.launch({
+        //     headless: true,
+        //     landscape: true,
+        //     args: [
+        //         '--no-sandbox',
+        //         '--disable-setuid-sandbox',
+        //         '--font-render-hinting=medium',
+        //         '--disable-skia-runtime-opts',
+        //         '--disable-font-subpixel-positioning',
+        //     ],
+        //     ignoreHTTPSErrors: true,
+        // });
 
         const page = await browser.newPage();
 
