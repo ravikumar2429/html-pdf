@@ -18,7 +18,7 @@ app.use(cors());
 
 // Health Check
 app.get('/', (req, res) => {
-    return res.send('✅ Markdown to PDF Converter API is running.');
+     res.send('✅ Markdown to PDF Converter API is running.');
 });
 
 // Main Route
@@ -27,8 +27,8 @@ app.post('/generatePdf', async (req, res) => {
     if (!markdown) {
         return res.status(400).json({ error: 'Markdown content is required' });
     }
-
-  console.log(markdown)
+const test=JSON.stringify(markdown)
+  console.log(`hello ${test}`)
 
     const fullHtml = markdown
    
