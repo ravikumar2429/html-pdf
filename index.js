@@ -27,9 +27,7 @@ app.post('/generatePdf', async (req, res) => {
     if (!markdown) {
         return res.status(400).json({ error: 'Markdown content is required' });
     }
-const test=JSON.stringify(markdown)
-  console.log(`strigified ${test}`)
-  console.log(`input ${markdown}`)
+
 
     const fullHtml = markdown
    
@@ -92,7 +90,7 @@ const test=JSON.stringify(markdown)
         const { data: publicUrlData } = supabase.storage
             .from(bucketName)
             .getPublicUrl(fileName);
-
+console.log(publicUrlData);
         res.status(200).json({
             message: '✅ PDF uploaded successfully',
             url: publicUrlData.publicUrl,
