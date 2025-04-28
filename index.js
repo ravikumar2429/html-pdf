@@ -18,7 +18,7 @@ app.use(cors());
 
 // Health Check
 app.get('/', (req, res) => {
-    res.send('✅ Markdown to PDF Converter API is running.');
+    return res.send('✅ Markdown to PDF Converter API is running.');
 });
 
 // Main Route
