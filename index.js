@@ -30,7 +30,7 @@ app.post('/generatePdf', async (req, res) => {
 const test=JSON.stringify(markdown)
   console.log(`hello ${test}`)
 
-    const fullHtml = markdown
+    const fullHtml = test
    
     try {
         // Launch puppeteer using chrome-aws-lambda
