@@ -3,7 +3,7 @@ const { createClient } = require('@supabase/supabase-js');
 const cors = require('cors');
 
 const puppeteer = require('puppeteer');
-// const chromium = require('@sparticuz/chromium')
+const chromium = require('@sparticuz/chromium')
 require('dotenv').config();
 
 const app = express();
